@@ -1,0 +1,388 @@
+/*  import google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* root */
+:root {
+    --primary:#ba1f33;
+    --white:#fff;
+    --black:#000;
+    --scrollbar-track-bg-color: #f1f1f1;
+    --scrollbar-thumb-bg-color: #888;
+    --scrollbar-thumb-hover-bg-color: #555;
+    --title-bg-before: #111;
+    --title-bg-after: #fff;
+    --bg-black-dark:#111;
+    --bg-black-medium:#222;
+    --bg-black-light:#333;
+}
+
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb-bg-color);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover-bg-color);
+}
+
+/* utility class */
+.text-dark-blue{
+    color: var(--primary);
+}
+
+.bg-dark-blue{
+    background: var(--primary);
+}
+
+
+/* all similar content styling codes */
+.about,.education,.skills,.project,.contact,footer {
+    font-family: 'Poppins', sans-serif;
+}
+
+section .title {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+section .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: var(--title-bg-before);
+    transform: translateX(-50%);
+}
+
+section .title::after {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: var(--primary);
+    padding: 0 5px;
+    background: var(--title-bg-after);
+    transform: translateX(-50%);
+}
+
+/* navbar styling */
+.navbar {
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+    padding: 15px 0;
+    background: var(--primary);
+    box-shadow: 0 .5rem 1rem rgba(0 0 0 / .15) !important;
+}
+
+.navbar .logo a span {
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky .logo a span {
+    color: var(--white) !important;
+}
+
+.navbar a {
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: var(--primary)!important;
+}
+
+.navbar.sticky a:hover {
+    color: var(--white) !important;
+}
+
+/* menu btn styling */
+
+.scroll-up-btn {
+    right: 30px;
+    bottom: 10px !important;
+    cursor: pointer;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.scroll-up-btn.show {
+    z-index: 10 !important;
+    opacity: 1 !important;
+    pointer-events: auto;
+}
+
+.scroll-up-btn:hover {
+    filter: brightness(90%);
+}
+
+/* i.active:before{
+    content: "\f00d";
+} */
+
+/* home section styling */
+.home {
+    background: url("../images/bg3.jpg") no-repeat center;
+    height: 100vh;;
+    min-height: 500px;
+    background-size: cover;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.home:before {
+    opacity: 0.3;
+}
+
+.home:before {
+    background: var(--black);
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.v-middle {
+    transform: translate(0%, -50%);
+}
+
+.home .home-content a {
+    border-color: var(--primary) !important;
+    transition: all 0.3s ease;
+}
+
+.home .home-content a:hover {
+    color: var(--primary) !important;
+    background: none;
+}
+
+/* about section styling */
+.about .title::after {
+    content: "who i am";
+}
+
+.about .about-content .left img {
+    height: 400px;
+    width: 400px;
+}
+
+.about .about-content .right p {
+    text-align: justify;
+}
+
+.about .about-content .right a {
+    border-color: var(--primary) !important;
+    transition: all 0.3s ease;
+}
+
+.about .about-content .right a:hover {
+    color: var(--primary) !important;
+    background: none;
+}
+
+/* education section styling */
+.education,.project {
+    background: var(--bg-black-dark);
+}
+
+.education .title::before, .project .title::before {
+    background: var(--white);
+}
+
+.education .title::after, .project .title::after {
+    background: var(--bg-black-dark);
+    content: "what i studied";
+}
+
+.education .edu-content .card {
+    background: var(--bg-black-medium);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.education .edu-content .card:hover {
+    background: var(--primary) !important;
+}
+
+.education .edu-content .card .box {
+    transition: all 0.3s ease;
+}
+
+.education .edu-content .card:hover .box {
+    transform: scale(1.05);
+}
+
+/* skills section styling */
+
+.skills .title::after {
+    content: "what i know";
+}
+
+.skills .skills-content .left p {
+    text-align: justify;
+}
+
+.skills .skills-content .left a {
+    border-color: var(--primary) !important;
+    transition: all 0.3s ease;
+}
+
+.skills .skills-content .left a:hover {
+    color: var(--primary) !important;
+    background: none;
+}
+
+.progress {
+    height: 5px;
+}
+
+.progress-done {
+    transition: 1s ease 0.3s;
+}
+
+.skills .more{
+    display: none;
+}
+
+
+/* Project section styling */
+.project .title::after {
+    content: "what i have done";
+}
+
+.achivement .title::after{
+    content: "Things i achieved";
+}
+
+.project .card {
+    background: var(--bg-black-medium);
+    transition: all 0.3s ease;
+}
+
+.project .card:hover {
+    background: var(--primary) !important;
+}
+
+.project .card .box {
+    transition: all 0.3s ease;
+}
+
+.project .card:hover .box {
+    transform: scale(1.05);
+}
+
+.project .card img {
+    height: 150px;
+    width: 270px;
+    border-color: var(--primary) !important;
+    transition: all 0.3s ease;
+}
+
+.project .card:hover img {
+    border-color: var(--white) !important;
+}
+
+.owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-dot {
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    outline: none !important;
+    border-radius: 50%;
+    border: 2px solid var(--primary) !important;
+    transition: all 0.3s ease;
+}
+
+.owl-dot.active {
+    width: 35px;
+    border-radius: 14px;
+}
+
+.owl-dot.active,
+.owl-dot:hover {
+    background: var(--primary) !important;
+}
+
+/* testimonials */
+.testimonials .title::after {
+    content: "people's thinking";
+}
+
+.testimonials .carousel .card {
+    transition: all 0.3s ease;
+}
+
+.testimonials .carousel .card:hover {
+    border: 2px solid var(--primary) !important;
+}
+
+.testimonials .carousel .card .box {
+    transition: all 0.3s ease;
+}
+
+.testimonials .carousel .card:hover .box {
+    transform: scale(1.05);
+}
+
+.testimonials .carousel .card img {
+    width: 60px;
+    margin-right: 1rem;
+    overflow: hidden;
+    border-color: var(--primary) !important;
+    transition: all 0.3s ease;
+}
+
+/* contact section styling */
+.contact .title::after {
+    content: "get in touch";
+}
+
+/* ::placeholder{
+    color:var(--white) !important;
+} */
+
+.contact .contfrm .form-control:focus{
+    outline: none !important;
+    box-shadow: 0 0 0 0.25rem rgba(144, 144, 144, 0.25) !important;
+}
+
+/* footer section styling */
+footer{
+    background:var(--bg-black-medium);
+}
+
+footer span a:hover {
+    text-decoration: underline;
+}
